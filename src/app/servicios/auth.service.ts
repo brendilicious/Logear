@@ -9,7 +9,7 @@ export class AuthService {
   constructor(
     public afAuth: AngularFireAuth
   ) { }
-  registerUser(email: string, pass: string){
+  registerUser(email: string, pass: string) {
     return new Promise((resolve, reject) => {
       this.afAuth.auth.createUserWithEmailAndPassword(email, pass)
       .then( userData => resolve(userData),
@@ -26,7 +26,7 @@ export class AuthService {
   }
 
   getAuth(){
-    return this.afAuth.authState.map ( auth => auth);
+    return this.afAuth.authState.map(auth => auth);
   }
 
   logout(){
